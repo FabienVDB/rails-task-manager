@@ -1,0 +1,8 @@
+  <%= simple_form_for @task, defaults: { input_html: { class: 'form-group' } }, method: :patch do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <% if !@task.new_record? %>
+      <%= f.input :completed, as: :boolean%>
+    <% end %>
+    <%= f.button :submit, class: 'btn btn-primary'  %>
+  <% end %>
